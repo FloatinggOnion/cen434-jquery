@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neumorphic Box Color Change</title>
+    <style>
+        /* Neumorphic style for the box */
+        .neumorphic-box {
+            width: 200px;
+            height: 200px;
+            background-color: #ecf0f3;
+            border-radius: 15px;
+            margin: 50px;
+            padding: 20px;
+            box-shadow: 10px 10px 20px #bcbcbc, -10px -10px 20px #ffffff;
+            transition: background-color 0.3s ease;
+        }
+    </style>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Function to change the color of the box
+            function changeBoxColor() {
+                // Generate a random color (you can modify this part based on your requirements)
+                var randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+                
+                // Apply the new color to the box
+                $('.neumorphic-box').css('background-color', randomColor);
+            }
+
+            // Attach the click event to the button
+            $('#colorChangeButton').click(function() {
+                changeBoxColor();
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- Neumorphic box element -->
+    <div class="neumorphic-box"></div>
+
+    <!-- Button to change the color -->
+    <button id="colorChangeButton">Change Color</button>
+</body>
+</html>
